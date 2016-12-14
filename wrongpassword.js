@@ -19,7 +19,7 @@ driver.manage().window().setSize(1200,1200);
 driver.get('https://www.wgsn.com/en/').catch(function(e) {
 	console.log("timed out")
 });
-
+//failed login 1
 clickAndWait('button white header-btn log-in-btn','User Login | WGSN | Creating Tomorrow')
 driver.findElement(By.id('login-email-user')).sendKeys('userblocking');
 driver.findElement(By.id('login-password')).sendKeys('asdf123').catch(function(e) {
@@ -27,11 +27,43 @@ driver.findElement(By.id('login-password')).sendKeys('asdf123').catch(function(e
 });
 driver.findElement(By.id('login-submit-button')).click();
 
-
+//failed login 2
 driver.findElement(By.id('login-email-user')).sendKeys('userblocking');
 driver.findElement(By.id('login-password')).sendKeys('asdf123').catch(function(e) {
 	console.log("timed out");
 });
 driver.findElement(By.id('login-submit-button')).click();
+
+//failed login 3
+driver.findElement(By.id('login-email-user')).sendKeys('userblocking');
+driver.findElement(By.id('login-password')).sendKeys('asdf123').catch(function(e) {
+	console.log("timed out");
+});
+driver.findElement(By.id('login-submit-button')).click();
+
+//failed login 4
+driver.findElement(By.id('login-email-user')).sendKeys('userblocking');
+driver.findElement(By.id('login-password')).sendKeys('asdf123').catch(function(e) {
+	console.log("timed out");
+});
+driver.findElement(By.id('login-submit-button')).click();
+
+//failed login 5
+driver.findElement(By.id('login-email-user')).sendKeys('userblocking');
+driver.findElement(By.id('login-password')).sendKeys('asdf123').catch(function(e) {
+	console.log("timed out");
+});
+driver.findElement(By.id('login-submit-button')).click();
+
+// failed login 6, should see the suspended account text
+driver.findElement(By.id('login-email-user')).sendKeys('userblocking');
+driver.findElement(By.id('login-password')).sendKeys('asdf123').catch(function(e) {
+	console.log("timed out");
+});
+driver.findElement(By.id('login-submit-button')).click();
+driver.findElement(By.className('error-message displayError')).catch(function(e) {
+	console.log("did NOT find error message")
+});
+
 
 driver.quit();
